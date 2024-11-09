@@ -1,8 +1,10 @@
 import pymysql
+import os
 import hashlib
 import random
 from twilio.rest import Client
 from translation import translations
+from dotenv import load_dotenv
 
 # Database configuration
 DB_HOST = 'localhost'
@@ -10,11 +12,12 @@ DB_USER = 'root'
 DB_PASSWORD = 'toor'
 DB_NAME = 'flight_management'
 
-# Twilio configuration (Replace with your own Twilio SID, Auth Token, and Twilio phone number)
-TWILIO_SID = ''
-TWILIO_AUTH_TOKEN = '94edee1800d7a5f223282940021bd196'
-TWILIO_PHONE_NUMBER = '+16193135432'
+load_dotenv()
+TWILIO_SID = os.getenv("TWILIO_SID")
+TWILIO_AUTH_TOKEN = os.getenv("TWILIO_AUTH_TOKEN")
+TWILIO_PHONE_NUMBER = os.getenv("TWILIO_PHONE_NUMBER")
 
+# Twilio configuration (Replace with your own Twilio SID, Auth Token, and Twilio phone number)
 # Helper function to hash passwords
 def hash_password(password):
     return hashlib.sha256(password.encode()).hexdigest()
