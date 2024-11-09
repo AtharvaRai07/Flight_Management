@@ -1,4 +1,5 @@
 # Define translations for English and Spanish
+print("Hello World")
 translations = {
     'en': {
         'welcome': "Welcome to the Flight Booking System!",

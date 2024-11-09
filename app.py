@@ -5,6 +5,7 @@ import random
 from twilio.rest import Client
 from translation import translations
 from dotenv import load_dotenv
+print("Hello World")
 
 # Database configuration
 DB_HOST = 'localhost'
